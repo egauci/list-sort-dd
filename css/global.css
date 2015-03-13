@@ -1,0 +1,25 @@
+body {
+  margin: 0 0 10px 0;
+}
+
+.ctrAll {
+  max-width: 1200px;
+  background: white;
+}
+
+[role="banner"] {
+  height: 60px;
+  background: #fff8f8;
+  font-size: 120%;
+  line-height: 60px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #666;
+}
+
+[role="banner"] * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
