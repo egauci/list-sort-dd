@@ -1,4 +1,5 @@
 System.config({
+  "baseURL": "/react-dd",
   "transpiler": "babel",
   "paths": {
     "*": "*.js",
@@ -201,7 +202,7 @@ System.config({
       "inherits": "npm:inherits@2.0.1",
       "systemjs-json": "github:systemjs/plugin-json@0.1.0"
     },
-    "npm:envify@3.4.0": {
+    "npm:envify@3.3.1": {
       "jstransform": "npm:jstransform@10.1.0",
       "process": "github:jspm/nodelibs-process@0.1.1",
       "through": "npm:through@2.3.6"
@@ -355,7 +356,7 @@ System.config({
     },
     "npm:react@0.13.0": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
-      "envify": "npm:envify@3.4.0",
+      "envify": "npm:envify@3.3.1",
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:readable-stream@1.1.13": {
@@ -365,7 +366,7 @@ System.config({
       "inherits": "npm:inherits@2.0.1",
       "isarray": "npm:isarray@0.0.1",
       "process": "github:jspm/nodelibs-process@0.1.1",
-      "stream": "github:jspm/nodelibs-stream@0.1.0",
+      "stream": "npm:stream-browserify@1.0.0",
       "stream-browserify": "npm:stream-browserify@1.0.0",
       "string_decoder": "npm:string_decoder@0.10.31",
       "util": "github:jspm/nodelibs-util@0.1.0"
