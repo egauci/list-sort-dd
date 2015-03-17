@@ -13,17 +13,17 @@
     "url": "https://github.com/egauci/react-dd/issues"
   },
   "homepage": "https://github.com/egauci/react-dd",
+  "devDependencies": {
+    "jspm": "^0.14.0"
+  },
   "jspm": {
     "directories": {
       "lib": "lib",
       "packages": "jspm_packages"
     },
     "dependencies": {
-      "floatdrop/plugin-jsx": "github:floatdrop/plugin-jsx@^0.1.1",
-      "react": "npm:react@0.13.0"
+      "jsx": "github:zcregan/plugin-babeljsx@^0.1.0",
+      "react": "npm:react@^0.13.1"
     }
-  },
-  "devDependencies": {
-    "jspm": "^0.14.0"
   }
 }

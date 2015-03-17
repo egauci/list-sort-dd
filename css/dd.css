@@ -1,0 +1,13 @@
+.dds ul {
+  list-style-type: none;
+}
+
+.dds li {
+  margin: 10px 0;
+  padding: 5px 2px;
+  line-height: 1.5em;
+}
+
+[aria-grabbed="true"] {
+  background-color: #ddd;
+}
