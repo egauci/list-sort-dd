@@ -6,8 +6,13 @@
   margin: 10px 0;
   padding: 5px 2px;
   line-height: 1.5em;
+  border: 1px solid #ddd;
 }
 
 [aria-grabbed="true"] {
-  background-color: #ddd;
+  background-color: #d8d8d8;
+}
+
+.dds .over {
+  background-color: #ffeee8;
 }

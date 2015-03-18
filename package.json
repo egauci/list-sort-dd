@@ -22,7 +22,7 @@
       "packages": "jspm_packages"
     },
     "dependencies": {
-      "jsx": "github:zcregan/plugin-babeljsx@^0.1.0",
+      "jsx": "github:floatdrop/plugin-jsx@^1.1.0",
       "react": "npm:react@^0.13.1"
     }
   }
