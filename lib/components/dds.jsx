@@ -55,6 +55,33 @@ let DDS = React.createClass({
       action: 'onDragLeave'
     });
   },
+  onFocus(e) {
+    console.log('onFocus');
+    let id = e.currentTarget.getAttribute('data-id'),
+        pos = e.currentTarget.getAttribute('data-pos');
+    this.props.callBack({
+      action: 'onFocus',
+      id: id,
+      pos: parseInt(pos, 10)
+    });
+  },
+  onKeyDown(e) {
+    console.log('onKeyDown: kc: ' + e.keyCode + ', which: ' + e.which);
+    let id = e.currentTarget.getAttribute('data-id'),
+        pos = e.currentTarget.getAttribute('data-pos'),
+        theKey = e.which;
+    this.props.callBack({
+      action: 'onKey',
+      id: id,
+      pos: parseInt(pos, 10),
+      theKey: theKey
+    });
+  },
+  componentDidUpdate() {
+    this.props.callBack({
+      action: 'didUpdate'
+    });
+  },
   render() {
     return (
       <div className="dds">
@@ -83,6 +110,8 @@ let DDS = React.createClass({
                   onDrop={this.onDrop}
                   onDragEnd={this.onDragEnd}
                   onDragLeave={this.onDragLeave}
+                  onFocus={this.onFocus}
+                  onKeyDown={this.onKeyDown}
                 >
                   {itm.label}
                 </li>

@@ -4,7 +4,8 @@ import React from 'react';
 import DDS from './components/dds.jsx!';
 import config from './dconfig';
 
-let dds;
+let dds,
+    dropId;
 
 let callBack = function(dta) {
   switch(dta.action) {
@@ -37,6 +38,41 @@ let callBack = function(dta) {
         config.meta.over = config.meta.overPos = null;
       dds.setProps({config: config});
       //console.log('onDragEnd: ' + JSON.stringify(config.meta, null, '  '));
+      break;
+    case 'onFocus':
+      if (config.meta.dragging) {
+        config.meta.over = dta.id;
+        config.meta.overPos = dta.pos;
+        dds.setProps({config: config});
+      }
+      break;
+    case 'onKey':
+      if (dta.theKey === 27) {
+        config.meta.dragging = config.meta.draggingPos =
+          config.meta.over = config.meta.overPos = null;
+        dds.setProps({config: config});
+      } else if (dta.theKey === 32) {
+        config.meta.over = config.meta.overPos = null;
+        config.meta.dragging = dta.id;
+        config.meta.draggingPos = dta.pos;
+        dds.setProps({config: config});
+      } else if (config.meta.dragging && (dta.theKey === 13 || dta.theKey === 77)) {
+        dropId = config.meta.dragging;
+        let moved = config.list.splice(config.meta.draggingPos, 1);
+        config.list.splice(config.meta.overPos, 0, moved[0]);
+        config.meta.dragging = config.meta.draggingPos =
+          config.meta.over = config.meta.overPos = null;
+        dds.setProps({config: config});
+      }
+      break;
+    case 'didUpdate':
+      if (dropId) {
+        let elm = document.querySelector('[data-id="' + dropId + '"]');
+        if (elm) {
+          elm.focus();
+        }
+        dropId = null;
+      }
       break;
   }
 };
