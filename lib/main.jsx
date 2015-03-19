@@ -7,6 +7,20 @@ import config from './dconfig';
 let dds,
     dropId;
 
+let findNewPos = function(dta) {
+  let newPos = dta.theKey === 38 ? dta.pos - 1 : dta.pos + 1;
+  if (newPos < 0 || newPos >= config.list.length) {
+    return false;
+  }
+  if (config.list[newPos].id === config.meta.dragging) {
+    newPos = dta.theKey === 38 ? newPos - 1 : newPos + 1;
+  }
+  if (newPos < 0 || newPos >= config.list.length) {
+    return false;
+  }
+  return newPos;
+}
+
 let callBack = function(dta) {
   switch(dta.action) {
     case 'onDragStart':
@@ -63,6 +77,22 @@ let callBack = function(dta) {
         config.meta.dragging = config.meta.draggingPos =
           config.meta.over = config.meta.overPos = null;
         dds.setProps({config: config});
+      } else if (dta.theKey === 40 || dta.theKey === 38) {
+        let newPos = findNewPos(dta);
+        if (newPos !== false) {
+          let elm = document.querySelector('[data-id="' + config.list[newPos].id + '"]');
+          if (elm) {
+            elm.focus();
+          }
+        }
+      }
+      break;
+    case 'listArrowDown':
+      if (!config.meta.dragging) {
+        let elm = document.querySelector('[data-id="' + config.list[0].id + '"]');
+        if (elm) {
+          elm.focus();
+        }
       }
       break;
     case 'didUpdate':

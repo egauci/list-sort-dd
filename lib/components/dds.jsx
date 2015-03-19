@@ -66,7 +66,7 @@ let DDS = React.createClass({
     });
   },
   onKeyDown(e) {
-    console.log('onKeyDown: kc: ' + e.keyCode + ', which: ' + e.which);
+    console.log('onKeyDown: kc: ' + e.keyCode + ', which: ' + e.which + ', ctrl: ' + e.ctrlKey);
     let id = e.currentTarget.getAttribute('data-id'),
         pos = e.currentTarget.getAttribute('data-pos'),
         theKey = e.which;
@@ -76,6 +76,16 @@ let DDS = React.createClass({
       pos: parseInt(pos, 10),
       theKey: theKey
     });
+    if (e.keyCode === 40) {
+      e.stopPropagation();
+    }
+  },
+  listKey(e) {
+    if (e.keyCode === 40) {
+      this.props.callBack({
+        action: 'listArrowDown'
+      });
+    }
   },
   componentDidUpdate() {
     this.props.callBack({
@@ -85,7 +95,7 @@ let DDS = React.createClass({
   render() {
     return (
       <div className="dds">
-        <ul>
+        <ul tabIndex="0" onKeyDown={this.listKey}>
           {
             this.props.config.list.map((itm, ix) => {
               return (
@@ -94,7 +104,7 @@ let DDS = React.createClass({
                   data-id={itm.id}
                   data-pos={String(ix)}
                   draggable="true"
-                  tabIndex={this.props.config.meta.dragging !== itm.id ? "0" : null}
+                  tabIndex="-1"
                   aria-grabbed= {(this.props.config.meta.dragging &&
                                  this.props.config.meta.dragging === itm.id) ?
                                  "true" : "false"}
