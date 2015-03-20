@@ -17,3 +17,7 @@
 .dds .over {
   background-color: #ffeee8;
 }
+
+.dds [draggable="true"] {
+  cursor: move;
+}
