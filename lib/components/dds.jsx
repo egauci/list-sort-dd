@@ -94,7 +94,7 @@ let DDS = React.createClass({
   },
   render() {
     return (
-      <div className="dds">
+      <div className="dds" role="application">
         <ul tabIndex="0" onKeyDown={this.listKey}>
           {
             this.props.config.list.map((itm, ix) => {
