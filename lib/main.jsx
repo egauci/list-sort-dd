@@ -65,12 +65,13 @@ let callBack = function(dta) {
         config.meta.dragging = config.meta.draggingPos =
           config.meta.over = config.meta.overPos = null;
         dds.setProps({config: config});
-      } else if (dta.theKey === 32) {
+      } else if (dta.theKey === 32 && !config.meta.dragging) {
         config.meta.over = config.meta.overPos = null;
         config.meta.dragging = dta.id;
         config.meta.draggingPos = dta.pos;
         dds.setProps({config: config});
-      } else if (config.meta.dragging && (dta.theKey === 13 || dta.theKey === 77)) {
+      } else if ((dta.theKey === 32 && config.meta.dragging) ||
+                 (config.meta.dragging && (dta.theKey === 13 || dta.theKey === 77))) {
         dropId = config.meta.dragging;
         let moved = config.list.splice(config.meta.draggingPos, 1);
         config.list.splice(config.meta.overPos, 0, moved[0]);
