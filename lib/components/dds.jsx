@@ -123,6 +123,7 @@ let DDS = React.createClass({
                   onFocus={this.onFocus}
                   onKeyDown={this.onKeyDown}
                 >
+                  <img src="images/ReorderControl.png" alt="Drag to reorder" className="reord-icon" draggable="false" />
                   {itm.label}
                 </li>
               );
