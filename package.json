@@ -1,29 +1,31 @@
 {
   "name": "react-dd",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "description": "React-based Accessible Drag Drop Experiment",
   "repository": {
     "type": "git",
-    "url": "git@github.com:egauci/react-dd.git"
+    "url": "git@github.com:egauci/list-sort-dd.git"
   },
   "author": "Ed Gauci",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/egauci/react-dd/issues"
+    "url": "https://github.com/egauci/list-sort-dd/issues"
   },
-  "homepage": "https://github.com/egauci/react-dd",
+  "homepage": "https://github.com/egauci/list-sort-dd",
   "devDependencies": {
-    "jspm": "^0.14.0"
+    "jspm": "^0.15.1"
   },
   "jspm": {
     "directories": {
-      "lib": "lib",
-      "packages": "jspm_packages"
+      "lib": "lib"
     },
     "dependencies": {
-      "jsx": "github:floatdrop/plugin-jsx@^1.1.0",
       "react": "npm:react@^0.13.1"
+    },
+    "devDependencies": {
+      "babel": "npm:babel@^4.7.16",
+      "babel-runtime": "npm:babel-runtime@^4.7.16"
     }
   }
 }
