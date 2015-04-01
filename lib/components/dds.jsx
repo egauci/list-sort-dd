@@ -38,9 +38,13 @@ let DDS = React.createClass({
     }
   },
   onDrop(e) {
+    let id = e.currentTarget.getAttribute('data-id'),
+        pos = e.currentTarget.getAttribute('data-pos');
     console.log('onDrop');
     this.props.callBack({
-      action: 'onDrop'
+      action: 'onDrop',
+          id: id,
+          pos: parseInt(pos, 10)
     });
   },
   onDragEnd(e) {

@@ -37,6 +37,8 @@ let callBack = function(dta) {
       break;
     case 'onDrop':
       //console.log('Main onDrop: ' + JSON.stringify(config.meta, null, '  '));
+      config.meta.over = dta.id;
+      config.meta.overPos = dta.pos;
       let moved = config.list.splice(config.meta.draggingPos, 1);
       config.list.splice(config.meta.overPos, 0, moved[0]);
       //console.log('setting to: ' + JSON.stringify(config, null, '  '));
