@@ -108,4 +108,6 @@ let callBack = function(dta) {
   }
 };
 
+React.initializeTouchEvents(true);
+
 dds = React.render(<DDS config={config} callBack={callBack} />, document.querySelector('#ddCtr'));
