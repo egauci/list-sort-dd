@@ -16,8 +16,8 @@ System.config({
 
 System.config({
   "map": {
-    "babel": "npm:babel@5.0.7",
-    "babel-runtime": "npm:babel-runtime@5.0.7",
+    "babel": "npm:babel@4.7.16",
+    "babel-runtime": "npm:babel-runtime@4.7.16",
     "react": "npm:react@0.13.1",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
@@ -113,7 +113,7 @@ System.config({
       "assert": "github:jspm/nodelibs-assert@0.1.0",
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
-    "npm:babel-core@5.0.7": {
+    "npm:babel-core@4.7.16": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",
       "ast-types": "npm:ast-types@0.7.2",
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
@@ -157,11 +157,11 @@ System.config({
       "tty": "github:jspm/nodelibs-tty@0.1.0",
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
-    "npm:babel-runtime@5.0.7": {
-      "core-js": "npm:core-js@0.8.1"
+    "npm:babel-runtime@4.7.16": {
+      "process": "github:jspm/nodelibs-process@0.1.1"
     },
-    "npm:babel@5.0.7": {
-      "babel-core": "npm:babel-core@5.0.7",
+    "npm:babel@4.7.16": {
+      "babel-core": "npm:babel-core@4.7.16",
       "chokidar": "npm:chokidar@0.12.6",
       "commander": "npm:commander@2.7.1",
       "convert-source-map": "npm:convert-source-map@0.5.1",
