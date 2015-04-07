@@ -8,15 +8,24 @@
     <script src="jspm_packages/system.js"></script>
     <script src="config.js"></script>
     <link rel="stylesheet" href="css/top.css">
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/base-min.css">
-    <!--link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"-->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/dd.css">
   </head>
   <body>
     <div class="ctrAll">
       <header role="banner"><h1>Drag Drop Component</h1></header>
-      <div id="ddCtr" class="ddCtr"></div>
+      <div class="pure-g">
+        <div class="pure-u-1 pure-u-sm-1-2">
+          <h2>List 1</h2>
+          <div id="ddCtr1" class="ddCtr"></div>
+        </div>
+        <div class="pure-u-1 pure-u-sm-1-2">
+          <h2>List 2</h2>
+          <div id="ddCtr2" class="ddCtr"></div>
+        </div>
+      </div>
     </div>
     <script>
       var iosDragDropShim = { enableEnterLeave: true }
